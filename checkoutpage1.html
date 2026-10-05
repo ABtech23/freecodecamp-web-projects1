@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkout Page</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Checkout</h1>
+    <section>
+        <h2>Your Cart</h2>
+        <img src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg" alt="this is a 3x3 Cube box">
+        <p>3x3 Cube box</p>
+        <p>$23.99</p>
+    </section>
+    <section>
+        <h2>Payment Information</h2>
+        <form>
+            <label for="card-name">Card Name:<span aria-hidden="true">*</span></label><input id="card-name"
+                name="card-name" type="text" required><br>
+            <label for="card-number">Card Number:<span aria-hidden="true">*</span></label><input id="card-number"
+                name="card-number" type="text" required aria-describedby="card-number-help">
+            <p id="card-number-help">enter your 16-digit card number without spaces or dashes.</p>
+            <label for="card-expire">Expiry Date:<span aria-hidden="true">*</span></label><input id="card-expire"
+                name="card-expire" type="text" placeholder="MM/YY" required><br>
+            <label for="card-cvv">CVV:<span aria-hidden="true">*</span></label><input id="card-cvv" name="card-cvv"
+                type="text" required><br>
+            <button>Place Order</button>
+        </form>
+    </section>
+
+</body>
+
+</html>
