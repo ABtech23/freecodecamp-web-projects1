@@ -1,48 +1,48 @@
 body {
-    background-color: rgb(154, 209, 227);
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
+  background-color:rgb(154, 209, 227);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
 .blog-post-card {
-    background-color: white;
-    /* background-image: url('https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg'); */
-    border-radius: 5px;
-    text-align: center;
-    width: 300px;
-    margin: 0 auto;
+  background-color: white;
+  /* background-image: url('https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg'); */
+  border-radius: 15px;
+  text-align: center;
+  width:300px;
+  margin: 0 auto;
 }
 
 .post-img {
-    width: 100%;
-    border-bottom: 2px solid black;
+  width: 100%;
+  border-bottom: 2px solid black;
+  border-radius:15px;
 }
 
 .post-content {
-    padding: 20px;
+  padding: 20px;
 }
 
-.post-title,
-.post-excerpt {
-    color: rgb(12, 14, 117);
-    margin: 10px;
+.post-title, .post-excerpt {
+  color: rgb(12, 14, 117);
+  margin: 10px;
 }
 
 .read-more {
-    color: white;
-    background-color: rgb(18, 193, 114);
-    text-decoration: none;
-    margin: 10px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: inline-block;
+  color:white;
+  background-color: rgb(18, 193, 114);
+  text-decoration: none;
+  margin:10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-block;
 }
-
 .read-more:hover {
-    background-color: rgb(5, 117, 5);
+  background-color: rgb(5, 117, 5);
+}
+.read-more:visited {
+  color: rgb(1, 57, 1);
 }
 
-.read-more:visited {
-    color: rgb(1, 57, 1);
-}
+
