@@ -1,0 +1,61 @@
+body {
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+.color-grid {
+  background-color: cyan;
+  margin: 20px
+}
+
+.color-box {
+  /* width: 150px;
+  height: 250px; */
+  background-color: rgb(0, 255, 249);
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(2, 150px);
+  width: 500px;
+  gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+
+}
+
+.color1,
+.color2,
+.color3,
+.color4,
+.color5,
+.color6 {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+}
+
+.color1 {
+  background-color: #008F00;
+}
+
+.color2 {
+  background-color: rgb(0, 128, 0);
+}
+
+.color3 {
+  background-color: lightgreen;
+}
+
+.color4 {
+  background-color: hsl(150, 100%, 50%);
+}
+
+.color5 {
+  background-color: lightblue;
+}
+
+.color6 {
+  background-color: rgb(10, 9, 9)
+}
