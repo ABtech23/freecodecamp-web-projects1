@@ -1,0 +1,67 @@
+h1 {
+  text-align: center;
+}
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: stretch;
+  border: 1px solid;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid black;
+  justify-content: space-between;
+  flex: 0 0 200px;
+
+  padding: 25px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.basic-plan {
+  order: 0;
+  border-color: #64748b;
+}
+
+.pro-plan {
+  order: 1;
+  flex-grow: 2;
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.premium-plan {
+  order: 2;
+  border-color: #7c3aed;
+  background-color: #faf5ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  color: #475569;
+}
+
+li::before {
+  content: "✓ ";
+  color: #16a34a;
+  font-weight: bold;
+}
