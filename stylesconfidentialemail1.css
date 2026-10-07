@@ -1,0 +1,36 @@
+body {
+  background: linear-gradient(135deg, #b9d1d7, #dceff3);
+}
+
+#email {
+  background: linear-gradient(135deg, #c9e8ee, #e8f7fa);
+  padding: 50px;
+  margin: 50px auto;
+  width: 500px;
+  border: 2px solid;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 2px gray;
+}
+
+#confidential {
+  display: inline-block;
+  padding: 20px;
+  margin-left: 10px;
+  border: 3px solid;
+  text-align: center;
+  transform: rotate(-2.9deg);
+}
+
+#top-secret {
+  display: inline-block;
+  padding: 20px;
+  margin-left: 10px;
+  border: 3px solid;
+  text-align: center;
+  transform: rotate(2.4deg);
+}
+
+.blurred {
+  filter: blur(3px);
+}
