@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071827;
+    color: #e6f1ff;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #e6f1ff;
+}
+
+table {
+    border: 1px solid #294b68;
+    width: 95%;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #030d16;
+    background-color: #0c2236;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+
+caption {
+    padding: 12px;
+    color: #67e8f9;
+    font-weight: bold;
+}
+
+th {
+    font-weight: bold;
+    background-color: #163651;
+    color: #e6f1ff;
+    padding: 12px;
+    border-bottom: 2px solid #67e8f9;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #294b68;
+}
+
+
+tr[class="read"] {
+    background-image: linear-gradient(to right, #123b5d, #164e63);
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(to right, #102a43, #1d4e89);
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(to right, #123b5d, #2563a6);
+}
+
+
+span {
+    display: inline-block;
+}
+
+
+tr[class="to-read"] span[class="status"] {
+    border: 1px solid #67e8f9;
+    background-image: linear-gradient(to right, #164e63, #0e7490);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+tr[class="read"] span[class="status"] {
+    border: 1px solid #60a5fa;
+    background-image: linear-gradient(to right, #1d4e89, #2563a6);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+tr[class="in-progress"] span[class="status"] {
+    border: 1px solid #93c5fd;
+    background-image: linear-gradient(to right, #1e40af, #3b82f6);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+span[class="status"],
+span[class^="rate"] {
+    height: 25px;
+    width: 100px;
+    padding: 3px;
+}
+
+
+span[class^="rate"]>span {
+    border: 1px solid #67e8f9;
+    border-radius: 50%;
+    margin: 2px;
+    height: 12px;
+    width: 12px;
+    background-color: #123b5d;
+}
+
+
+span[class~="one"]>span:first-child {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+
+span[class~="two"]>span:nth-child(-n+2) {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+
+span[class~="three"]>span {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+
+
+span.status {
+    cursor: pointer;
+    transition: box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+tr[class="read"] span[class="status"]:hover {
+    background-image: linear-gradient(to right, #2563eb, #38bdf8);
+    box-shadow: 0 0 12px #38bdf8;
+    transform: scale(1.05);
+}
+
+tr[class="to-read"] span[class="status"]:hover {
+    background-image: linear-gradient(to right, #0891b2, #67e8f9);
+    box-shadow: 0 0 12px #67e8f9;
+    transform: scale(1.05);
+}
+
+tr[class="in-progress"] span[class="status"]:hover {
+    background-image: linear-gradient(to right, #1d4ed8, #60a5fa);
+    box-shadow: 0 0 12px #60a5fa;
+    transform: scale(1.05);
+}

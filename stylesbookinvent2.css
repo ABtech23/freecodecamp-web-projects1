@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071827;
+    color: #e6f1ff;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    border: 1px solid;
+    width: 95%;
+    padding: 20px;
+    margin: 2px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #0C2236;
+    border-color: #294B68;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+
+th {
+    font-weight: bold;
+    background-color: #163651;
+    color: #E6F1FF;
+    padding: 12px;
+    border-bottom: 2px solid #67E8F9;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #294B68;
+}
+
+tr[class~="read"] {
+    background-image: linear-gradient(to right, #123B5D, #164E63);
+    padding-bottom: 2px;
+    border-radius: 5px;
+
+}
+
+tr[class~="to-read"] {
+    background-image: linear-gradient(to right, #102A43, #1D4E89);
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+tr[class~="in-progress"] {
+    background-image: linear-gradient(to right, #123B5D, #2563A6);
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+
+span {
+    display: inline-block;
+}
+
+tr[class~="to-read"] span[class="status"] {
+    border: 1px solid #67E8F9;
+    background-image: linear-gradient(to right, #164E63, #0E7490);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+tr[class~="read"] span[class="status"] {
+    border: 1px solid #60A5FA;
+    background-image: linear-gradient(to right, #1D4E89, #2563A6);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+tr[class~="in-progress"] span[class="status"] {
+    border: 1px solid #93C5FD;
+    background-image: linear-gradient(to right, #1E40AF, #3B82F6);
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+span[class="status"],
+span[class^="rate"] {
+    height: 25px;
+    width: 100px;
+    padding: 3px;
+}
+
+span[class^="rate"]>span {
+    border: 1px solid #67e8f9;
+    border-radius: 50%;
+    margin: 2px;
+    height: 12px;
+    width: 12px;
+    background-color: #123b5d;
+}
+
+span[class~="one"]>span:first-child {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+span[class~="two"]>span:nth-child(-n+2) {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+span[class~="three"]>span {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+span[class~="four"]>span {
+    background-image: linear-gradient(to right, #67e8f9, #3b82f6);
+}
+
+span.status {
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+tr[class~="read"] span.status:hover {
+    background-image: linear-gradient(to right, #2563eb, #38bdf8);
+    box-shadow: 0 0 12px #38bdf8;
+    transform: scale(1.05);
+}
+
+
+tr[class~="to-read"] span.status:hover {
+    background-image: linear-gradient(to right, #0891b2, #67e8f9);
+    box-shadow: 0 0 12px #67e8f9;
+    transform: scale(1.05);
+}
+
+
+tr[class~="in-progress"] span.status:hover {
+    background-image: linear-gradient(to right, #1d4ed8, #60a5fa);
+    box-shadow: 0 0 12px #60a5fa;
+    transform: scale(1.05);
+}

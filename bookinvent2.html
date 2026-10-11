@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Book Inventory</title>
+  <link rel="stylesheet" href="stylesbookinvent2.css">
+</head>
+
+<body>
+  <h1>Book Inventory</h1>
+  <table>
+    <caption>This is a Book Inventory</caption>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="read">
+        <td>Iron Man</td>
+        <td>Stan Lee</td>
+        <td>Comic</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate four">
+            <span></span><span></span><span></span>
+          </span></td>
+      </tr>
+
+      <tr class="to-read">
+        <td>Harry Potter</td>
+        <td>J. K. Rowling</td>
+        <td>Fantasy</td>
+        <td><span class="status">To Read</span></td>
+        <td><span class="rate three">
+            <span></span><span></span><span></span>
+          </span></td>
+      </tr>
+
+      <tr class="in-progress">
+        <td>Doctor Strange</td>
+        <td>Stan Lee</td>
+        <td>Comic</td>
+        <td><span class="status">In Progress</span></td>
+        <td><span class="rate">
+            <span></span><span></span><span></span>
+          </span></td>
+      </tr>
+
+      <tr class="read">
+        <td>The Alchemist</td>
+        <td>Paulo Coelho</td>
+        <td>Fiction</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate two">
+            <span></span><span></span><span></span>
+          </span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form id="book-form">
+    <input id="title" placeholder="Book title" required>
+    <input id="author" placeholder="Author" required>
+    <input id="category" placeholder="Category" required>
+
+    <select id="status">
+      <option value="to-read">To Read</option>
+      <option value="in-progress">In Progress</option>
+      <option value="read">Read</option>
+    </select>
+
+    <select id="rating">
+      <option value="0">Not rated</option>
+      <option value="one">1 star</option>
+      <option value="two">2 stars</option>
+      <option value="three">3 stars</option>
+    </select>
+
+    <button type="submit" id="save-button">Add Book</button>
+    <button type="button" id="cancel-button" hidden>
+      Cancel Edit
+    </button>
+  </form>
+  <script>
+    const form = document.querySelector("#book-form");
+    const tbody = document.querySelector("tbody");
+
+    const titleInput = document.querySelector("#title");
+    const authorInput = document.querySelector("#author");
+    const categoryInput = document.querySelector("#category");
+    const statusInput = document.querySelector("#status");
+    const ratingInput = document.querySelector("#rating");
+
+    const saveButton = document.querySelector("#save-button");
+    const cancelButton = document.querySelector("#cancel-button");
+    let books = [
+      {
+        id: 1,
+        title: "Iron Man",
+        author: "Stan Lee",
+        category: "Comic",
+        status: "read",
+        rating: "three"
+      },
+      {
+        id: 2,
+        title: "Harry Potter",
+        author: "J. K. Rowling",
+        category: "Fantasy",
+        status: "to-read",
+        rating: "two"
+      },
+      {
+        id: 3,
+        title: "Doctor Strange",
+        author: "Stan Lee",
+        category: "Comic",
+        status: "in-progress",
+        rating: "one"
+      },
+      {
+        id: 4,
+        title: "The Alchemist",
+        author: "Paulo Coelho",
+        category: "Fiction",
+        status: "read",
+        rating: "three"
+      }
+    ];
+
+    let editingId = null;
+
+    function renderBooks() {
+      tbody.replaceChildren();
+
+      books.forEach(book => {
+        const row = document.createElement("tr");
+        row.classList.add(book.status);
+
+        const values = [
+          book.title,
+          book.author,
+          book.category
+        ];
+
+        values.forEach(value => {
+          const cell = document.createElement("td");
+          cell.textContent = value;
+          row.appendChild(cell);
+        });
+
+        // Status cell
+        const statusCell = document.createElement("td");
+        const statusSpan = document.createElement("span");
+
+        statusSpan.className = "status";
+        statusSpan.textContent = {
+          "read": "Read",
+          "to-read": "To Read",
+          "in-progress": "In Progress"
+        }[book.status];
+
+        statusCell.appendChild(statusSpan);
+        row.appendChild(statusCell);
+
+        // Rating cell
+        const ratingCell = document.createElement("td");
+        const ratingSpan = document.createElement("span");
+
+        ratingSpan.className = "rate";
+
+        if (book.rating !== "0") {
+          ratingSpan.classList.add(book.rating);
+        }
+
+        for (let i = 0; i < 3; i++) {
+          ratingSpan.appendChild(document.createElement("span"));
+        }
+
+        ratingCell.appendChild(ratingSpan);
+        row.appendChild(ratingCell);
+
+        // Actions cell
+        const actionsCell = document.createElement("td");
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.dataset.action = "edit";
+        editButton.dataset.id = book.id;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.dataset.action = "delete";
+        deleteButton.dataset.id = book.id;
+
+        actionsCell.append(editButton, deleteButton);
+        row.appendChild(actionsCell);
+
+        tbody.appendChild(row);
+      });
+    }
+
+    // Add a new book or update an existing one
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const bookData = {
+        title: titleInput.value.trim(),
+        author: authorInput.value.trim(),
+        category: categoryInput.value.trim(),
+        status: statusInput.value,
+        rating: ratingInput.value
+      };
+
+      if (editingId !== null) {
+        books = books.map(book =>
+          book.id === editingId
+            ? { ...book, ...bookData }
+            : book
+        );
+      } else {
+        books.push({
+          id: Date.now(),
+          ...bookData
+        });
+      }
+
+      resetForm();
+      renderBooks();
+    });
+
+    // Handle Edit and Delete buttons
+    tbody.addEventListener("click", event => {
+      const button = event.target.closest("button[data-action]");
+
+      if (!button) return;
+
+      const id = Number(button.dataset.id);
+      const book = books.find(book => book.id === id);
+
+      if (!book) return;
+
+      if (button.dataset.action === "edit") {
+        editingId = id;
+
+        titleInput.value = book.title;
+        authorInput.value = book.author;
+        categoryInput.value = book.category;
+        statusInput.value = book.status;
+        ratingInput.value = book.rating;
+
+        saveButton.textContent = "Update Book";
+        cancelButton.hidden = false;
+        titleInput.focus();
+      }
+
+      if (button.dataset.action === "delete") {
+        books = books.filter(book => book.id !== id);
+
+        if (editingId === id) {
+          resetForm();
+        }
+
+        renderBooks();
+      }
+    });
+
+    function resetForm() {
+      form.reset();
+      editingId = null;
+      saveButton.textContent = "Add Book";
+      cancelButton.hidden = true;
+    }
+
+    cancelButton.addEventListener("click", resetForm);
+
+    renderBooks();
+  </script>
+
+</body>
+
+</html>
