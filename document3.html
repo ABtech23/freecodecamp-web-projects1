@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Technical Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <header>Java Documentation</header>
+    <a class="nav-link" href="#Introduction_to_Java">Introduction to Java</a>
+    <a class="nav-link" href="#Variables">Variables</a>
+    <a class="nav-link" href="#Data_Types">Data Types</a>
+    <a class="nav-link" href="#Operators">Operators</a>
+    <a class="nav-link" href="#Inputs">Inputs</a>
+    <a class="nav-link" href="#Conditions">Conditions</a>
+    <a class="nav-link" href="#Loops">Loops</a>
+    <a class="nav-link" href="#Methods">Methods</a>
+    <a class="nav-link" href="#Arrays">Arrays</a>
+    <a class="nav-link" href="#OOP_(Object-Oriented_Programming)">OOP (Object-Oriented Programming)</a>
+    <a class="nav-link" href="#Encapsulation">Encapsulation</a>
+    <a class="nav-link" href="#Inheritance">Inheritance</a>
+    <a class="nav-link" href="#Polymorphism">Polymorphism</a>
+    <a class="nav-link" href="#Abstraction">Abstraction</a>
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction_to_Java">
+      <header>Introduction to Java</header>
+      <p>Java is a popular, object-oriented programming language.</p>
+      <p>It is used to develop web applications, desktop software, and Android applications.</p>
+      <code>System.out.println("Hello, World!");</code>
+    </section>
+
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables are containers that store values.</p>
+      <p>Each variable has a type that determines what kind of value it can store.</p>
+      <code>int x = 2;
+String name = "Alex";</code>
+    </section>
+
+    <section class="main-section" id="Data_Types">
+      <header>Data Types</header>
+      <p>Java has primitive data types such as int, float, double, char, and boolean.</p>
+      <p>String is a reference type used to represent text.</p>
+      <code>int x = 2;
+float y = 2.2f;
+String z = "Hello";
+boolean w = true;</code>
+    </section>
+
+    <section class="main-section" id="Operators">
+      <header>Operators</header>
+      <p>Operators perform operations on values and variables.</p>
+      <p>Common types include arithmetic, assignment, comparison, and logical operators.</p>
+      <code>int sum = 5 + 3;
+boolean result = true && false;</code>
+      <ul>
+        <li>Arithmetic operators perform calculations.</li>
+        <li>Comparison operators compare values.</li>
+        <li>Logical operators combine boolean expressions.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Inputs">
+      <header>Inputs</header>
+      <p>You can take user input in Java using the Scanner class.</p>
+      <p>Import Scanner from java.util and create a Scanner object to read keyboard input.</p>
+      <code>import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int num = sc.nextInt();</code>
+      <ul>
+        <li>nextInt() reads an integer.</li>
+        <li>nextDouble() reads a double value.</li>
+        <li>nextLine() reads a line of text.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Conditions">
+      <header>Conditions</header>
+      <p>Conditional statements allow a program to make decisions.</p>
+      <p>Java supports if, else if, and else statements.</p>
+      <code>if (age >= 18) {
+  System.out.println("Adult");
+} else {
+  System.out.println("Minor");
+}</code>
+    </section>
+
+    <section class="main-section" id="Loops">
+      <header>Loops</header>
+      <p>Loops repeat a block of code while a condition is satisfied or for a specified number of iterations.</p>
+      <p>Java provides for, while, and do-while loops.</p>
+      <code>for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+
+while (condition) {
+  // code to repeat
+}</code>
+      <ul>
+        <li>A for loop is useful when the number of iterations is known.</li>
+        <li>A while loop repeats while its condition remains true.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Methods">
+      <header>Methods</header>
+      <p>Methods are reusable blocks of code that perform specific tasks.</p>
+      <p>They can accept parameters and may return a value.</p>
+      <code>static int add(int a, int b) {
+  return a + b;
+}</code>
+      <ul>
+        <li>Parameters provide input to a method.</li>
+        <li>The return statement sends a result back to the caller.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Arrays">
+      <header>Arrays</header>
+      <p>An array stores multiple values of the same type under a single variable name.</p>
+      <p>Array elements are accessed using indexes, starting at zero.</p>
+      <code>int[] arr = {1, 2, 3, 4};
+System.out.println(arr[0]);</code>
+    </section>
+
+    <section class="main-section" id="OOP_(Object-Oriented_Programming)">
+      <header>OOP (Object-Oriented Programming)</header>
+      <p>Object-Oriented Programming is an approach based on classes and objects.</p>
+      <p>Java uses OOP to organize code, reuse functionality, and make programs easier to maintain.</p>
+      <code>class Human {
+  String name;
+
+  void speak() {
+    System.out.println("Hello!");
+  }
+}</code>
+      <ul>
+        <li>A class is a blueprint for creating objects.</li>
+        <li>An object is an instance of a class.</li>
+        <li>The four main OOP principles are encapsulation, inheritance, polymorphism, and abstraction.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Encapsulation">
+      <header>Encapsulation</header>
+      <p>Encapsulation combines data and methods in a class while controlling access to the data.</p>
+      <p>Private fields and public methods can help protect an object's internal state.</p>
+      <code>class Person {
+  private String name;
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+}</code>
+      <ul>
+        <li>private restricts direct access from other classes.</li>
+        <li>Getters and setters provide controlled access to fields.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Inheritance">
+      <header>Inheritance</header>
+      <p>Inheritance allows one class to inherit accessible fields and methods from another class.</p>
+      <p>The existing class is called the parent class, and the inheriting class is called the child class.</p>
+      <code>class Animal {
+  void eat() {
+    System.out.println("Eating...");
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    System.out.println("Barking...");
+  }
+}
+
+Dog dog = new Dog();
+dog.eat();
+dog.bark();</code>
+      <ul>
+        <li>The extends keyword is used for class inheritance.</li>
+        <li>Inheritance promotes code reuse.</li>
+        <li>Java classes support single inheritance of classes.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Polymorphism">
+      <header>Polymorphism</header>
+      <p>Polymorphism means "many forms." It allows the same method name or interface to represent different behaviors.
+      </p>
+      <p>Two common forms in Java are method overloading and method overriding.</p>
+      <code>class Calculator {
+  int add(int a, int b) {
+    return a + b;
+  }
+
+  int add(int a, int b, int c) {
+    return a + b + c;
+  }
+}
+
+class Animal {
+  void sound() {
+    System.out.println("Animal sound");
+  }
+}
+
+class Cat extends Animal {
+  @Override
+  void sound() {
+    System.out.println("Meow");
+  }
+}</code>
+      <ul>
+        <li>Overloading uses the same method name with different parameter lists.</li>
+        <li>Overriding lets a subclass provide its own implementation of an inherited method.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Abstraction">
+      <header>Abstraction</header>
+      <p>Abstraction hides implementation details and shows only the essential features of an object.</p>
+      <p>Java supports abstraction through abstract classes and interfaces.</p>
+      <code>abstract class Vehicle {
+  abstract void start();
+}
+
+class Car extends Vehicle {
+  @Override
+  void start() {
+    System.out.println("Car starts");
+  }
+}
+
+Car car = new Car();
+car.start();</code>
+      <ul>
+        <li>An abstract class can contain abstract and concrete methods.</li>
+        <li>An interface defines a contract that implementing classes follow.</li>
+        <li>Abstraction helps reduce complexity.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

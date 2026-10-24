@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Technical Documentation</title>
+  <link rel="stylesheet" href="stylesdocument1.css">
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <header>Java Documentation</header>
+    <a class="nav-link" href="#Introduction_to_Java">Introduction to Java</a>
+    <a class="nav-link" href="#variables">Variables</a>
+    <a class="nav-link" href="#data-types">Data Types</a>
+    <a class="nav-link" href="#operators">Operators</a>
+    <a class="nav-link" href="#inputs">Inputs</a>
+    <a class="nav-link" href="#conditions">Conditions</a>
+    <a class="nav-link" href="#iterations">Loops</a>
+    <a class="nav-link" href="#methods">Methods</a>
+    <a class="nav-link" href="#arrays">Arrays</a>
+    <a class="nav-link" href="#OOP">OOP</a>
+
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction_to_Java">
+      <header>Introduction to Java</header>
+      <p>Java is a popular, object-oriented programming language.</p>
+      <p>It is used to develop web applications, desktop software, and Android applications.</p>
+      <code>System.out.println("Hello, World!");</code>
+    </section>
+
+    <section class="main-section" id="variables">
+      <header>Variables</header>
+      <p>Variables are like containers that store values. You can think of them as named boxes that hold data.</p>
+      <p>Each variable has a type that determines what kind of value it can store.</p>
+      <code>int x = 2;</code>
+      <code>String name = "Alex";</code>
+    </section>
+
+    <section class="main-section" id="data-types">
+      <header>Data Types</header>
+      <p>Java has primitive data types such as int, float, double, char, and boolean.</p>
+      <p>String is a reference type used to represent text. Strings are enclosed in double quotes.</p>
+      <code>int x = 2;</code>
+      <code>float y = 2.2f;</code>
+      <code>String z = "Hello";</code>
+      <code>boolean w = true;</code>
+    </section>
+
+    <section class="main-section" id="operators">
+      <header>Operators</header>
+      <p>Operators perform operations on values and variables.</p>
+      <p>Common types include arithmetic, assignment, comparison, and logical operators.</p>
+      <code>int sum = 5 + 3;</code>
+      <code>boolean result = true && false;</code>
+      <ul>
+        <li>Arithmetic operators perform calculations.</li>
+        <li>Comparison operators compare values.</li>
+        <li>Logical operators combine boolean expressions.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="inputs">
+      <header>Inputs</header>
+      <p>You can take user input in Java using the Scanner class.</p>
+      <p>Import Scanner from java.util and create a Scanner object to read input from the keyboard.</p>
+      <code>import java.util.Scanner;</code>
+      <code>Scanner sc = new Scanner(System.in);</code>
+      <code>int num = sc.nextInt();</code>
+      <ul>
+        <li>nextInt() reads an integer.</li>
+        <li>nextDouble() reads a double value.</li>
+        <li>nextLine() reads a line of text.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="conditions">
+      <header>Conditions</header>
+      <p>Conditional statements allow a program to make decisions based on whether a condition is true or false.</p>
+      <p>Java supports if, else if, and else statements.</p>
+      <code>if (age >= 18) {
+  System.out.println("Adult");
+} else {
+  System.out.println("Minor");
+}</code>
+    </section>
+
+    <section class="main-section" id="iterations">
+      <header>Loops</header>
+      <p>Loops repeat a block of code while a condition is satisfied or for a specified number of iterations.</p>
+      <p>Java provides for, while, and do-while loops.</p>
+      <code>for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}</code>
+      <code>while (condition) {
+  // code to repeat
+}</code>
+      <ul>
+        <li>A for loop is useful when the number of iterations is known.</li>
+        <li>A while loop repeats while its condition remains true.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="methods">
+      <header>Methods</header>
+      <p>Methods are reusable blocks of code that perform specific tasks.</p>
+      <p>They can accept parameters and may return a value.</p>
+      <code>static int add(int a, int b) {
+  return a + b;
+}</code>
+      <ul>
+        <li>Parameters provide input to a method.</li>
+        <li>The return statement sends a result back to the caller.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="arrays">
+      <header>Arrays</header>
+      <p>An array stores multiple values of the same type under a single variable name.</p>
+      <p>Array elements are accessed using indexes, starting at zero.</p>
+      <code>int[] arr = {1, 2, 3, 4};</code>
+      <code>System.out.println(arr[0]);</code>
+    </section>
+
+    <section class="main-section" id="OOP">
+      <header>OOP (Object-Oriented Programming)</header>
+      <p>A class is a blueprint used to create objects.</p>
+      <p>An object is an instance of a class that can have state and behavior.</p>
+      <code>class Human {
+  String name;
+}</code>
+      <ul>
+        <li>Classes define the structure and behavior of objects.</li>
+        <li>Objects are instances of classes.</li>
+        <li>Inheritance allows one class to inherit from another.</li>
+      </ul>
+    </section>
+
+
+
+  </main>
+
+</body>
+
+</html>
