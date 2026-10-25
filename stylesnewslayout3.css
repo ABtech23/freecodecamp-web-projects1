@@ -1,0 +1,264 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: rgb(20, 30, 40);
+  color: linen;
+  font-family: "Baskervville", Georgia, serif;
+  line-height: 1.7;
+}
+
+.newspaper-layout {
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;
+  gap: 2rem;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  background-color: #141e28;
+  border: 1px solid #354654;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+  padding: 2rem;
+  background-color: #1b2935;
+  border-bottom: 4px solid orangered;
+}
+
+.newspaper-label {
+  margin: 0;
+  color: #00beef;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.title h1 {
+  margin: 0.5rem 0;
+  color: orangered;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(4rem, 7vw, 8rem);
+  line-height: 1.15;
+  letter-spacing: 2px;
+}
+
+.edition {
+  margin: 0.5rem 0;
+  color: linen;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.date {
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.feature-article {
+  grid-area: feature-article;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+}
+
+.cover-image {
+  grid-area: cover-image;
+  margin: 0;
+  padding: 1rem;
+  background-color: #1b2935;
+  align-self: start;
+}
+
+.cover-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cover-image figcaption {
+  margin-top: 1rem;
+  color: #00beef;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+}
+
+.small-article2 {
+  grid-area: small-article2;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+}
+
+.feature-article,
+.secondary-article,
+.small-article1,
+.small-article2,
+.small-article3 {
+  min-width: 0;
+  padding: 1.8rem;
+  background-color: #192630;
+  border: 1px solid #354654;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-article:hover,
+.secondary-article:hover,
+.small-article1:hover,
+.small-article2:hover,
+.small-article3:hover {
+  border-color: orangered;
+  transform: translateY(-2px);
+}
+
+h2,
+h3 {
+  color: #00beef;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.35;
+}
+
+.feature-article h2,
+.secondary-article h2 {
+  font-size: 2.5rem;
+}
+
+.small-article1 h3,
+.small-article2 h3,
+.small-article3 h3 {
+  font-size: 1.9rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+.category {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: orangered;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.newspaper-footer {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+  text-align: center;
+  border-top: 1px solid #354654;
+}
+
+.newspaper-footer p {
+  margin: 0.4rem 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* Medium screens: preserve the required grid areas */
+@media (max-width: 850px) {
+  .newspaper-layout {
+    gap: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .feature-article,
+  .secondary-article,
+  .small-article1,
+  .small-article2,
+  .small-article3 {
+    padding: 1.2rem;
+  }
+
+  .feature-article h2,
+  .secondary-article h2 {
+    font-size: 2rem;
+  }
+
+  .small-article1 h3,
+  .small-article2 h3,
+  .small-article3 h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small screens: adjust typography without changing grid areas */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .title {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .title h1 {
+    font-size: 4.5rem;
+  }
+
+  .newspaper-label {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .edition {
+    font-size: 1.2rem;
+  }
+
+  .date {
+    font-size: 1.1rem;
+  }
+
+  .feature-article h2,
+  .secondary-article h2 {
+    font-size: 2.2rem;
+  }
+
+  .small-article1 h3,
+  .small-article2 h3,
+  .small-article3 h3 {
+    font-size: 1.8rem;
+  }
+
+  .cover-image {
+    width: 100%;
+  }
+}
