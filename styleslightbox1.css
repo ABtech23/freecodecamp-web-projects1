@@ -1,0 +1,142 @@
+:root {
+    --back-color: #0a0a23;
+    --font-color: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--back-color);
+    color: var(--font-color);
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+}
+
+
+.gallery {
+    display: flex;
+    align-items: center;
+}
+
+.gallery-item {
+    padding: 8px;
+    width: 250px;
+    height: 200px;
+    transition: 1s;
+}
+
+.lightbox {
+    display: none;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+#lightbox-image {
+    width: 95%;
+    height: 95%;
+    position: fixed;
+}
+
+
+:root {
+    --back-color: #0a0a23;
+    --font-color: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--back-color);
+    color: var(--font-color);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #44d5ef;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 20px;
+    z-index: 1000;
+}
+
+#lightbox-image {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#close-btn:hover {
+    color: #44d5ef;
+}
+
+#close-btn:focus-visible {
+    outline: 2px solid #44d5ef;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        width: min(100%, 320px);
+        height: 200px;
+    }
+}
