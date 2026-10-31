@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-blue: #0a0a23;
+  --white: #ffffff;
+  --light-grey: #d0d0d5;
+  --orange: #ffac33;
+  --dark-grey: #3b3b4f;
+  --border-grey: #d0d0d5;
+}
+
+body {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.title,
+.options-label,
+.team-stats,
+footer {
+  color: var(--white);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 15px;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 25px;
+  background-color: var(--dark-grey);
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.team-stats p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+select {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  border: 2px solid var(--border-grey);
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+select:hover,
+select:focus {
+  border-color: var(--orange);
+}
+
+select option {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+.options-label {
+  display: block;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+}
+
+.player-card {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border-grey);
+  border-top: 4px solid var(--orange);
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+}
+
+.player-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.player-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-grey);
+}
+
+footer {
+  color: var(--white);
+  margin-top: 3rem;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
