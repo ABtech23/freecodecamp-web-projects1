@@ -1,0 +1,87 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0a0a23;
+    --card-color: #1b1b32;
+    --text-color: #ffffff;
+    --secondary-text: #d0d0d5;
+    --primary-color: #dfdfe2;
+    --border-color: #3b3b4f;
+    --font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px;
+    font-family: var(--font-family);
+}
+
+h1 {
+    margin-top: 60px;
+}
+
+.cardthis {
+    background-color: var(--card-color);
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 500px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #00000050;
+}
+
+label {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input {
+    display: block;
+    padding: 12px;
+    border-radius: 9px;
+    border: 2px solid var(--primary-color);
+    width: 80%;
+    margin: 0 auto 20px;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #3b3b4f;
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.paragraph {
+    background-color: var(--card-color);
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 500px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
