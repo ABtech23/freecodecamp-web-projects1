@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinal Tap</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --dark-blue: #0a0a23;
+      --white: #ffffff;
+      --light-grey: #d0d0d5;
+
+      --dark-grey: #3b3b4f;
+      --border-grey: #d0d0d5;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--dark-blue);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .theme-container {
+      width: min(90%, 450px);
+      padding: 30px;
+      background-color: var(--dark-grey);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input,
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #f1be32;
+      color: var(--dark-blue);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffcc4d;
+    }
+
+    #outputText {
+      overflow-wrap: anywhere;
+      color: var(--light-grey);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="theme-container">
+    <h1>Spinal Tap</h1>
+    <p>click</p>
+    <label for="inputText">Normal Text</label>
+    <input type="text" id="inputText" placeholder="Enter text here">
+    <!-- <button id="convertButton">Convert to Spinal Case</button> -->
+    <label for="outputText">Spinal Text</label>
+    <p id="outputText"></p>
+  </main>
+
+  <script src="scriptspinalcase1.js"></script>
+</body>
+
+</html>
