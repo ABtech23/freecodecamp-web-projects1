@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pig Latin Translator</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --dark-blue: #0a0a23;
+      --white: #ffffff;
+      --light-grey: #d0d0d5;
+      --dark-grey: #3b3b4f;
+      --orange: #ff9f43;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--dark-blue);
+      color: var(--white);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .theme-container {
+      width: min(100%, 450px);
+      padding: 30px;
+
+      background-color: var(--dark-grey);
+      border-radius: 12px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--orange);
+    }
+
+    p {
+      text-align: center;
+      color: var(--light-grey);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    output {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input {
+      border: 1px solid var(--light-grey);
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--orange);
+    }
+
+    output {
+      min-height: 45px;
+      background-color: var(--dark-blue);
+      color: var(--orange);
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="theme-container">
+
+    <h1>Pig Latin Translator</h1>
+
+    <p>Convert English words into Pig Latin!</p>
+
+    <label for="inputText">Normal Text</label>
+    <input type="text" id="inputText" placeholder="Enter a word...">
+
+    <label for="outputText">Pig Latin Translation</label>
+    <output id="outputText" aria-live="polite"></output>
+
+  </main>
+
+  <script src="scriptpglatin1.js"></script>
+
+</body>
+
+</html>
